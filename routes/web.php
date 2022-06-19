@@ -46,6 +46,16 @@ Route::group(['prefix'=>'farmer'],function()
 
 //raja roots
 
+Route::group(['prefix' => 'water'], function() {
+
+  Route::resource('water', 'Water\LocationController')->middleware('auth');
+  Route::resource('unit', 'Water\UnitPriceController')->middleware('auth');
+  Route::resource('meter', 'Water\MeterController')->middleware('auth');
+  Route::resource('customer', 'Water\CustomerController')->middleware('auth');
+  Route::resource('daily', 'Water\DailyUnitController')->middleware('auth');
+
+});
+
 Route::resource('student', 'StudentController')->middleware('auth');
 Route::get('invoice_general','StudentController@general')->name('student.general')->middleware('auth');
 Route::get('fees_collection','StudentController@payment')->name('student.payment')->middleware('auth');

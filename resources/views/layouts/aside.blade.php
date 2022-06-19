@@ -100,6 +100,31 @@
 
             @can('view-cargo-list')
             <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Settings
+                        </span></a>
+                <ul class="dropdown-menu">
+                    @can('view-cargo-list')
+                    <li><a class="nav-link" href="{{url('water/water')}}">Location Registration</a></li>
+                    @endcan
+                    @can('view-cargo-client-list')
+                    <li><a class="nav-link" href="{{url('water/unit')}}">Unit Price Management</a></li>
+                    @endcan
+                    @can('view-cargo-quotation')
+                    <li><a class="nav-link" href="{{url('water/meter')}}">Meter Registraion</a></li>
+                    @endcan
+                    @can('view-cargo-invoice')
+                    <li><a class="nav-link" href="{{url('water/customer')}}">Client Registraion</a></li>
+                    @endcan
+                    @can('view-cargo-mileage')
+                    <li><a class="nav-link" href="{{url('water/daily')}}">Daily Unit Control</a></li>
+                    @endcan
+                </ul>
+            </li>
+            @endcan
+
+
+            @can('view-cargo-list')
+            <li class="dropdown">
                 <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Cargo
                         Management</span></a>
                 <ul class="dropdown-menu">
